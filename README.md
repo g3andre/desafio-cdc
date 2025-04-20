@@ -1,20 +1,23 @@
 # Desafio Casa do Código
 
 ## Descrição do projeto
-Este projeto é um desafio técnico para a Casa do Código, desenvolvido em PHP com o framework Laravel. O objetivo é criar uma aplicação simples de gerenciamento de livros.
+Este projeto é um desafio técnico do curso Dev+ Eficiente simulando a Casa do Código, desenvolvido em PHP com o framework Laravel. 
 
 ## Execução do projeto
 
 ### Requisitos
-- PHP 8.0 ou superior
+- PHP 8.2 ou superior
 - Composer
-- MySQL ou outro banco de dados suportado pelo Laravel
-- Node.js e NPM (opcional, para compilar assets)
 
-### Instalação
-#### Utilizando o Docker e Sail
-- Necessário ter o Docker e o Docker Compose instalados na sua máquina.
-- Para executar o projeto utilizando o Docker, siga os passos abaixo:
+ou
+
+- Docker
+
+## Instalação
+### Utilizando o Docker e Sail
+- Necessário ter o Docker instalado na sua máquina. 
+
+Para executar o projeto utilizando o Docker, siga os passos abaixo:
 
 1. Instale as dependências do projeto:
 ```bash
@@ -29,7 +32,7 @@ docker run --rm \
 ```bash
 cp .env.example .env
 ```
-3. Inicie o ambiente Docker:
+3. Inicie o ambiente Docker utilizando o Sail:
 ```bash
 ./vendor/bin/sail up -d
 ```
@@ -45,12 +48,18 @@ cp .env.example .env
 ```bash
 ./vendor/bin/sail artisan db:seed
 ```
-7. Acesse a aplicação no navegador:
+7. Execute a suite de testes
+```bash
+./vendor/bin/sail test
+```
+8. Acesse a aplicação no navegador:
 ```
 http://localhost
 ```
+---
+### Utilizando o Composer
+- Necessário ter o PHP 8.2 ou superior e o Composer instalados na sua máquina.
 
-#### Utilizando o Composer
 Para executar o projeto, siga os passos abaixo:
 
 1. Instale as dependências:
@@ -73,11 +82,15 @@ php artisan migrate
 ```bash
 php artisan db:seed
 ```
-6. Inicie o servidor de desenvolvimento:
+6. Execute a suite de testes
+```bash
+php artisan test
+```
+7. Inicie o servidor de desenvolvimento:
 ```bash
 php artisan serve
 ```
-7. Acesse a aplicação no navegador:
+8. Acesse a aplicação no navegador:
 ```
 http://localhost
 ```
